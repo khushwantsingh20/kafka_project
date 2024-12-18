@@ -1,0 +1,65 @@
+khushwant@khushwant:~/Music/projects/kafka_tutorial$ source venv/bin/activate
+(venv) khushwant@khushwant:~/Music/projects/kafka_tutorial$ python kafka_consumer.py
+Listening for messages on Kafka topic 'test-topic'...
+Received: {'id': 1, 'name': 'Alice', 'action': 'login'}
+Received: {'id': 2, 'name': 'Bob', 'action': 'logout'}
+Received: {'id': 3, 'name': 'Charlie', 'action': 'update'}
+Received: {'id': 4, 'name': 'Diana', 'action': 'login'}
+^CConsumer stopped.
+(venv) khushwant@khushwant:~/Music/projects/kafka_tutorial$ python kafka_consumer.py
+Consuming messages from Kafka topic 'file-topic'...
+Received: {'event': 'user_login', 'user': 'Alice', 'timestamp': '2024-12-17T12:00:00'}
+Received: {'event': 'user_logout', 'user': 'Bob', 'timestamp': '2024-12-17T12:05:00'}
+Received: {'event': 'user_update', 'user': 'Charlie', 'timestamp': '2024-12-17T12:10:00'}
+Received: {'event': 'user_login', 'user': 'Diana', 'timestamp': '2024-12-17T12:15:00'}
+
+
+
+khushwant@khushwant:~/Music/projects/kafka_tutorial$ python -m venv venv
+Command 'python' not found, did you mean:
+  command 'python3' from deb python3
+  command 'python' from deb python-is-python3
+khushwant@khushwant:~/Music/projects/kafka_tutorial$ python3 -m venv venv
+sou     khushwant@khushwant:~/Music/projects/kafka_tutorial$ source venv/bin/activate
+(venv) khushwant@khushwant:~/Music/projects/kafka_tutorial$ pip install kafka-python
+Collecting kafka-python
+  Downloading kafka_python-2.0.2-py2.py3-none-any.whl (246 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 246.5/246.5 KB 7.2 MB/s eta 0:00:00
+Installing collected packages: kafka-python
+Successfully installed kafka-python-2.0.2
+(venv) khushwant@khushwant:~/Music/projects/kafka_tutorial$ python kafka_producer.py
+Producing messages to Kafka topic 'test-topic'...
+Sent: {'id': 1, 'name': 'Alice', 'action': 'login'}
+Sent: {'id': 2, 'name': 'Bob', 'action': 'logout'}
+Sent: {'id': 3, 'name': 'Charlie', 'action': 'update'}
+Sent: {'id': 4, 'name': 'Diana', 'action': 'login'}
+Producer finished.
+(venv) khushwant@khushwant:~/Music/projects/kafka_tutorial$ python kafka_producer.py
+Producing messages to Kafka topic 'test-topic'...
+Sent: {'id': 1, 'name': 'Alice', 'action': 'login'}
+Sent: {'id': 2, 'name': 'Bob', 'action': 'logout'}
+Sent: {'id': 3, 'name': 'Charlie', 'action': 'update'}
+Sent: {'id': 4, 'name': 'Diana', 'action': 'login'}
+Producer finished.
+(venv) khushwant@khushwant:~/Music/projects/kafka_tutorial$ python kafka_producer.py
+Sending messages to Kafka topic 'file-topic'...
+Sent: {'event': 'user_login', 'user': 'Alice', 'timestamp': '2024-12-17T12:00:00'}
+Sent: {'event': 'user_logout', 'user': 'Bob', 'timestamp': '2024-12-17T12:05:00'}
+Sent: {'event': 'user_update', 'user': 'Charlie', 'timestamp': '2024-12-17T12:10:00'}
+Sent: {'event': 'user_login', 'user': 'Diana', 'timestamp': '2024-12-17T12:15:00'}
+Producer finished.
+(venv) khushwant@khushwant:~/Music/projects/kafka_tutorial$ python kafka_producer.py
+Sending messages to Kafka topic 'file-topic'...
+Sent: {'event': 'user_login', 'user': 'Alice', 'timestamp': '2024-12-17T12:00:00'}
+Sent: {'event': 'user_logout', 'user': 'Bob', 'timestamp': '2024-12-17T12:05:00'}
+Sent: {'event': 'user_update', 'user': 'Charlie', 'timestamp': '2024-12-17T12:10:00'}
+Sent: {'event': 'user_login', 'user': 'Diana', 'timestamp': '2024-12-17T12:15:00'}
+Producer finished.
+(venv) khushwant@khushwant:~/Music/projects/kafka_tutorial$ python kafka_producer.py
+Sending messages to Kafka topic 'file-topic'...
+Sent: {'event': 'user_login', 'user': 'Alice', 'timestamp': '2024-12-17T12:00:00'}
+Sent: {'event': 'user_logout', 'user': 'Bob', 'timestamp': '2024-12-17T12:05:00'}
+Sent: {'event': 'user_update', 'user': 'Charlie', 'timestamp': '2024-12-17T12:10:00'}
+Sent: {'event': 'user_login', 'user': 'Diana', 'timestamp': '2024-12-17T12:15:00'}
+Producer finished.
+(venv) khushwant@khushwant:~/Music/projects/kafka_tutorial$ 
